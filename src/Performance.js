@@ -1,4 +1,4 @@
-let Performance = ( () => {
+let Performance = () => {
 	'use strict'
 
 	let options, t, records = {};
@@ -170,7 +170,7 @@ let Performance = ( () => {
 		},
 		clearAllRecords: () => clearAllRecords()
 	}
-})();
+};
 
 ((w) => {
   w.ExtendedPerformance = Performance;
