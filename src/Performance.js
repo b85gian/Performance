@@ -103,11 +103,11 @@ let Performance = ( () => {
     }
 
 		console.log(
-								"%cExecution timings (statistically " +
-								(options.reliable ? "RELIABLE" : "UNRELIABLE") +
-								"):\n", 
-								"color: yellow"
-							);
+				"%cExecution timings (statistically " +
+				(options.reliable ? "RELIABLE" : "UNRELIABLE") +
+				"):\n", 
+				"color: yellow"
+			);
 		console.log("--------------------------------------------------------");
 		console.log(
                 "\n%cTiming mean value: " +
