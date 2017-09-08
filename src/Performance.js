@@ -13,14 +13,14 @@ let Performance = ( () => {
 
 		if (opts && Object.keys(opts).length) {
 			return {
-				verbose:	opts.verbose != "undefined" && typeof opts.verbose == "boolean" ?
-                 	opts.verbose : defaults.verbose,
+				verbose: opts.verbose != "undefined" && typeof opts.verbose == "boolean" ?
+                 			 opts.verbose : defaults.verbose,
 				reliable: opts.reliable != "undefined" && typeof opts.reliable == "boolean" ?
-									opts.reliable : defaults.reliable,
+					  opts.reliable : defaults.reliable,
 				interval: opts.interval && typeof opts.interval == "number" ?
-									opts.interval : defaults.interval,
-				tests:		opts.tests && opts.tests > 2 && typeof opts.tests == "number" ?
-									opts.tests : defaults.tests
+					  opts.interval : defaults.interval,
+				tests:	opts.tests && opts.tests > 2 && typeof opts.tests == "number" ?
+					opts.tests : defaults.tests
 			}
 		}
 
