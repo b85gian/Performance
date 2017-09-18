@@ -1,4 +1,4 @@
-let Performance = ((w) => {
+((w) => {
 	'use strict'
 
 	let options, t, records = {};
@@ -62,7 +62,7 @@ let Performance = ((w) => {
 		console.clear();
 		console.log("Testing...");
 		const timeout = setInterval(performTests, options.interval);
-	}
+	};
 
 	const test = (callback, args) => {
 		let t0, t1, res;
@@ -74,7 +74,7 @@ let Performance = ((w) => {
 		t.outputs.push(res);
 
 		return t1 - t0;
-	}
+	};
 
 	const postProc = () => {
 		if (options.reliable)
@@ -90,7 +90,7 @@ let Performance = ((w) => {
 		records["Test_"+(Object.keys(records).length + 1)] = t;
 
 		return true;
-	}
+	};
 
 	const printResults = () => {
 		console.clear();
@@ -123,21 +123,21 @@ let Performance = ((w) => {
               );
 
 		return true;
-	}
+	};
 
 	const removeRecord = (i) => {
 		delete records["Test_"+Object.keys(records)[i]];
 
 		return records;
-	}
+	};
 
 	const clearAllRecords = () => {
 		Object.keys(records).forEach(function(el) {
 			delete records[el];
 		});
-	}
+	};
 
-	return {
+	const interface = {
 		add: (callback, args, opts) => main(callback, args, opts),
 		remove: (i) => removeRecord(i),
 		list: () => records,
@@ -169,7 +169,7 @@ let Performance = ((w) => {
 			return res;
 		},
 		clearAllRecords: () => clearAllRecords()
-	}
+	};
 
-	w.ExtendedPerformance = this;
+	w.ExtendedPerformance = interface;
 })(window);
