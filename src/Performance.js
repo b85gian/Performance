@@ -1,4 +1,4 @@
-let Performance = () => {
+let Performance = ((w) => {
 	'use strict'
 
 	let options, t, records = {};
@@ -105,7 +105,7 @@ let Performance = () => {
 		console.log(
 				"%cExecution timings (statistically " +
 				(options.reliable ? "RELIABLE" : "UNRELIABLE") +
-				"):\n", 
+				"):\n",
 				"color: yellow"
 			);
 		console.log("--------------------------------------------------------");
@@ -170,8 +170,6 @@ let Performance = () => {
 		},
 		clearAllRecords: () => clearAllRecords()
 	}
-};
 
-((w) => {
-  w.ExtendedPerformance = Performance;
+	w.ExtendedPerformance = this;
 })(window);
